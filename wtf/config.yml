@@ -1,0 +1,96 @@
+wtf:
+  colors:
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+
+  mods:
+    git:
+      title: "MyZiegler"
+      commitCount: 5
+      commitFormat: "[forestgreen]%h [grey]%cd [white]%s [grey]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      enabled: true
+      position:
+        top: 0
+        left: 0
+        height: 2
+        width: 2
+      refreshInterval: 8s
+      repositories:
+        - "/Users/sam/Developer/myz/myziegler-portal"
+
+    ipinfo:
+      colors:
+        name: "lightblue"
+        value: "white"
+      enabled: true
+      position:
+        top: 0
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 150
+
+    resourceusage:
+      cpuCombined: false
+      enabled: true
+      position:
+        top: 0
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 20s
+      showCPU: true
+      showMem: true
+      showSwp: true
+
+    security:
+      enabled: true
+      position:
+        top: 1
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 1h
+
+    brew_outdated:
+      args: ["outdated"]
+      cmd: "brew"
+      enabled: true
+      position:
+        top: 1
+        left: 3
+        width: 1
+        height: 1
+      type: cmdrunner
+
+    prettyweather:
+      enabled: true
+      city: "Poznań"
+      position:
+        top: 2
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 5m
+      unit: "m"
+      view: 0
+      language: "en"
+
+      todo:
+      checkedIcon: "X"
+      colors:
+        checked: gray
+        highlight:
+          fore: "black"
+          back: "orange"
+      enabled: true
+      filename: "todo.yml"
+      position:
+        top: 2
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 1h

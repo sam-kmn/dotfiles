@@ -1,0 +1,190 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# [custom.ai]
+# symbol= "🤖"
+# when = """aichat --role=%shell%"""
+
+[git_status]
+disabled = false
+format = '([$untracked]($style) )'
+untracked = '•'
+
+[bun]
+disabled = true
+format = "via [$symbol]($style)"
+
+[buf]
+disabled = true
+format = "via [$symbol]($style)"
+
+[cmake]
+disabled = true
+format = "via [$symbol]($style)"
+
+[cobol]
+disabled = true
+format = "via [$symbol]($style)"
+
+[crystal]
+disabled = true
+format = "via [$symbol]($style)"
+
+[daml]
+disabled = true
+format = "via [$symbol]($style)"
+
+[dart]
+disabled = true
+format = "via [$symbol]($style)"
+
+[deno]
+disabled = true
+format = "via [$symbol]($style)"
+
+[dotnet]
+disabled = true
+format = "[$symbol(🎯 $tfm )]($style)"
+
+[elixir]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[elm]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[erlang]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[fennel]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[golang]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[gradle]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[haxe]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[helm]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[java]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[julia]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[kotlin]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[lua]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[meson]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[nim]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[nodejs]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[ocaml]
+disabled = true
+format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
+
+[opa]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[perl]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[php]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[pulumi]
+disabled = true
+format = 'via [$symbol$stack]($style)'
+
+[purescript]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[python]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[raku]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[red]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[rlang]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[ruby]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[rust]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[solidity]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[typst]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[swift]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[vagrant]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[vlang]
+disabled = true
+format = 'via [$symbol]($style)'
+
+[zig]
+disabled = true
+format = 'via [$symbol]($style)'

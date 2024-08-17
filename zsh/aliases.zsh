@@ -1,18 +1,32 @@
 # SYS
 alias cd="zldir"
-alias md="mkdir"
+alias dir="mkdir"
+
 alias l="exa --tree --icons --level="1" --sort="type""
-alias ls="exa --tree --icons --level="2" --sort="type""
 alias al="exa -al"
-alias bat="bat -p"
+# alias ls="exa --tree --icons --level="2" --sort="type""
+
+alias cat="bat -p --paging=never --wrap=never"
+alias grep='grep --color=auto'
+
 alias reload="source ~/.zshrc && clear"
 alias clear='clear && neofetch'
 
-alias dot="~/code/dotfiles"
 # NPM
 alias p="pnpm"
 alias pd="pnpm dev"
 
+# BREW
+alias b="brew"
+alias bs="brew search"
+alias bi="brew install"
+alias bu="brew update && brew upgrade"
+
+# PATHS
+alias dot="~/code/dotfiles"
+
+#CUSTOM
+alias ai="aichat --role=%shell%"
 
 # GIT
 alias g="git"
@@ -28,7 +42,7 @@ alias gh="git checkout"
 # FILE SHARING
 alias clbin='~/.config/zsh/plugins/clbin.sh'
 alias termbin='nc termbin.com 9999'
-alias transfer="bash <(curl -L -s https://alicia.url.lol/transfer)"
+# alias transfer="bash <(curl -L -s https://alicia.url.lol/transfer)"
 
 
 # CRYPTO

@@ -16,6 +16,16 @@ git_branch() {
   fi
 }
 
+_aichat_zsh() {
+    if [[ -n "$BUFFER" ]]; then
+        local _prompt=$BUFFER
+        BUFFER="⌛"
+        zle -I && zle redisplay
+        BUFFER=$(aichat -e "$_prompt")
+        zle end-of-line
+    fi
+}
+
 archive_branch() {
   local branch_name="$1"
 
