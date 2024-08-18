@@ -1,5 +1,5 @@
-set -x VISUAL nvim
-set -x EDITOR nvim
+set -x VISUAL code
+set -x EDITOR code
 #set -Ux TERM_DEFAULT Therm
 
 set -gx PNPM_HOME /Users/sam/Library/pnpm
