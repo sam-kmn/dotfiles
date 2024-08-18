@@ -1,0 +1,65 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+matches:
+  - trigger: "!date "
+    replace: "{{date}}"
+    vars:
+      - name: date
+        type: date
+        params:
+          format: "%d/%m/%Y"
+
+  - trigger: "!datetime "
+    replace: "{{datetime}}"
+    vars:
+      - name: datetime
+        type: date
+        params:
+          format: "%H:%M • %d/%m/%Y"
+
+  - trigger: "!shell "
+    replace: "{{shell}}"
+    vars:
+      - name: shell
+        type: shell
+        params:
+          cmd: echo $SHELL | awk -F '/' '{print $NF}'
+    #   - trigger: ":now"
+    # replace: "It's {{mytime}}"
+    # vars:
+    #   - name: shellcmd
+    #     type: shell
+    #     params:
+    #       cmd: echo "%H:%M"
+    #   - name: mytime
+    #     type: date
+    #     params:
+    #       format: "{{shellcmd}}"
+
+    # - trigger: ":file"
+    # replace: "{{form1.file}}"
+    # vars:
+    #   - name: files
+    #     type: shell
+    #     params:
+    #       cmd: "find ~/Documents -maxdepth 1"
+    #   - name: form1
+    #     type: form
+    #     params:
+    #       layout: |
+    #         Select file:
+    #         [[file]]
+    #       fields:
+    #         file:
+    #           type: list
+    #           values: "{{files}}"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/

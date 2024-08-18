@@ -1,0 +1,42 @@
+global_vars:
+  - name: codes
+    type: echo
+    params:
+      echo: |
+        hello@svm.codes
+        mail@svm.codes
+        shad@svm.codes
+
+  - name: engineer
+    type: echo
+    params:
+      echo: |
+        hello@svm.engineer
+        contact@svm.engineer
+        kaminski@svm.engineer
+
+  - name: stonecode
+    type: echo
+    params:
+      echo: |
+        support@stonecode.pro
+        contact@stonecode.pro
+        samuel.kaminski@stonecode.pro
+
+  - name: gmail
+    type: echo
+    params:
+      echo: |
+        samuel.kaminski.dev@gmail.com
+        samuel.kaminski.webdev@gmail.com
+        samuel.kaminski.nexus@gmail.com
+
+matches:
+  - trigger: "@svm.c"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: fish -c "echo -e '{{svmcodes}}' | choose"
+          shell: zsh

@@ -1,0 +1,24 @@
+matches:
+  - triggers: ["!nick ", "!nick1"]
+    replace: "𝔰𝔳𝔪"
+  - triggers: ["!nick-bold ", "!nick1-bold"]
+    replace: "𝔰𝔳𝔪"
+  - trigger: "!nick2"
+    replace: "𝔰𝔥𝔞𝔡𝔰𝔳𝔪"
+  - trigger: "!nick2-bold"
+    replace: "𝖘𝖍𝖆𝖉𝖘𝖛𝖒"
+  - trigger: "!nick3"
+    replace: "丂卂爪"
+  - trigger: "!nick4"
+    replace: "丂卄卂ᗪ丂卂爪"
+
+  - trigger: "!svm-phone "
+    replace: "530643361"
+  - trigger: "!vi-phone "
+    replace: "662192753"
+  - trigger: "!svm-vat "
+    replace: "7773412694"
+  - trigger: "!svm-bank "
+    replace: "20 1090 2590 0000 0001 2391 8883"
+  - trigger: "!svm-home "
+    replace: "Os. Tytusa Dzialynskiego 1C/20; Swarzędz 62-020"
