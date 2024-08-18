@@ -1,5 +1,6 @@
 configstore
 raycast/extensions
+karabiner/automatic_backups/
 .DS_Store
 fontforge
 node_modules/
@@ -16,3 +17,4 @@ __pycache__
 raycast/config.json
 gh/hosts.yml
 karabiner/.prettierrc
+.vscode
