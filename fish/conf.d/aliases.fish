@@ -1,5 +1,4 @@
 alias !!="echo $history[1]"
-alias ls="lsd --gitsort"
 alias lsa="ls -al"
 alias rmr="rm -r"
 alias where='which'
