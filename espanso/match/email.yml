@@ -38,5 +38,32 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{svmcodes}}' | choose"
+          cmd: fish -c "echo -e '{{codes}}' | choose"
+          shell: zsh
+
+  - trigger: "@gmail"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: fish -c "echo -e '{{gmail}}' | choose"
+          shell: zsh
+
+  - trigger: "@svm.e"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: fish -c "echo -e '{{engineer}}' | choose"
+          shell: zsh
+
+  - trigger: "@stonecode"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: fish -c "echo -e '{{stonecode}}' | choose"
           shell: zsh
