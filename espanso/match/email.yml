@@ -31,32 +31,37 @@ global_vars:
         samuel.kaminski.webdev@gmail.com
         samuel.kaminski.nexus@gmail.com
 
+  - name: mail
+    type: echo
+    params:
+      echo: "{{codes}}{{engineer}}{{stonecode}}{{gmail}}"
+
 matches:
-  - trigger: "@svm.c"
+  - trigger: "@mail"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{codes}}' | choose"
+          cmd: fish -c "echo -e '{{mail}}' | choose; or echo mail@svm.codes"
           shell: zsh
 
-  - trigger: "@gmail"
+  - trigger: "@codes"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{gmail}}' | choose"
+          cmd: fish -c "echo -e '{{codes}}' | choose; or echo mail@svm.codes"
           shell: zsh
 
-  - trigger: "@svm.e"
+  - trigger: "@engineer"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{engineer}}' | choose"
+          cmd: fish -c "echo -e '{{engineer}}' | choose; or echo mail@svm.codes"
           shell: zsh
 
   - trigger: "@stonecode"
@@ -65,5 +70,14 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{stonecode}}' | choose"
+          cmd: fish -c "echo -e '{{stonecode}}' | choose; or echo mail@svm.codes"
+          shell: zsh
+
+  - trigger: "@gmail"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: fish -c "echo -e '{{gmail}}' | choose; or echo mail@svm.codes"
           shell: zsh

@@ -27,6 +27,8 @@ matches:
     replace: "🫡"
   - trigger: "!poker"
     replace: "😐"
+  - trigger: "!cute"
+    replace: "☺️"
   - trigger: "!evil"
     replace: "😈"
   - trigger: "!alien"
