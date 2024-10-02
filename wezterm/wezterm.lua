@@ -58,7 +58,7 @@ end)
 return {
 	-- general
 	color_scheme = "Monokai Soda",
-	-- color_scheme = "One Dark (Gogh)",
+	-- color_scheme = "Gruvbox",
 	default_cwd = "/Users/sam/code/",
 	force_reverse_video_cursor = true,
 	-- font
@@ -70,11 +70,11 @@ return {
 	window_background_opacity = 1,
 	macos_window_background_blur = 0,
 	max_fps = 60,
-	window_decorations = "RESIZE",
+	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	window_close_confirmation = "NeverPrompt",
 	-- tabs
-	enable_tab_bar = false,
-	tab_bar_at_bottom = true,
+	enable_tab_bar = true,
+	tab_bar_at_bottom = false,
 	use_fancy_tab_bar = false,
 	integrated_title_button_color = "Auto",
 	integrated_title_button_style = "MacOsNative",
