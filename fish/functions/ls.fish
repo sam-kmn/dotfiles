@@ -1,4 +1,3 @@
-function ls --wraps='lsd --gitsort' --wraps='eza -l --no-permissions --no-filesize --time-style relative --no-user --git --icons --almost-all --group-directories-first' --description 'alias ls=eza -l --no-permissions --no-filesize --time-style relative --no-user --git --icons --almost-all --group-directories-first'
-  eza -l --no-permissions --no-filesize --time-style relative --no-user --git --icons --almost-all --group-directories-first $argv
-        
+function ls --wraps='eza -l --git --icons --group-directories-first --time-style relative --no-user --no-permissions --no-filesize'
+    eza -l --git --icons --group-directories-first --time-style relative --no-user --no-permissions --no-filesize $argv
 end

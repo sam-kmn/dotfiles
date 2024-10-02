@@ -1,12 +1,13 @@
 function fish_right_prompt
-    # set -l cmd_status $status
-    # if test $cmd_status -ne 0
-    #     echo -n (set_color red)"✘"
-    # end
+    set -l cmd_status $status
 
-    # if test -d .git
-    #     echo (set_color grey)git:"("(set_color cyan)(git branch --show-current)(set_color grey)")"
-    # end
+    if test $cmd_status -ne 0
+        set_color red
+        echo "Error ✘ "(date "+%T")
+    else
+        set_color cyan
+        echo (fish_git_prompt)
+    end
+
     set_color normal
-
 end
