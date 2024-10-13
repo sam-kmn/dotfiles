@@ -1,70 +1,60 @@
-import {
-  FromKeyParam,
-  ifApp,
-  ifVar,
-  layer,
-  map,
-  mapDoubleTap,
-  NumberKeyValue,
-  rule,
-  simlayer,
-  ToEvent,
-  ToKeyCode,
-  ToKeyParam,
-  toPaste,
-  withCondition,
-  withMapper,
-  withModifier,
-  writeToProfile,
-} from 'karabiner.ts'
+import
+  {
+    layer,
+    map,
+    NumberKeyValue,
+    rule,
+    withMapper,
+    writeToProfile,
+  } from 'karabiner.ts'
 
-// ! Change '--dry-run' to your Karabiner-Elements Profile name.
-// (--dry-run print the config json into console)
-// + Create a new profile if needed.
+
 writeToProfile('node', [
 
-  // rule('Caps Lock → Hyper').manipulators([
-  // ]),
+  rule('disable defaults')
+    .manipulators([
+      map('h', '⌘').toNone(),
+    ]),
 
-  rule('Defaults').manipulators([
-    map('h', '⌘').toNone(),
-    // map('r').toIfHeldDown('fn', '⌃')
-  ]),
+  rule('straight map')
+    .manipulators([
+      map('caps_lock')
+        .toHyper()
+        .toIfAlone('return_or_enter'),
+    ]),
 
-  layer('caps_lock', 'caps').manipulators([
-    map('caps_lock').toHyper().toIfAlone('escape'),
-    withMapper({
-      h:'←',
-      j:'↓',
-      k:'↑',
-      l:'→',
-    } as const)
-    ((key, value) => map(key).to(value)),
-    // map('r').toIfHeldDown('fn', '⌃')
-  ]),
+  layer(';', 'semi_layer')
+    .manipulators([
+      map('w').to('fn', '⌃')
+    ]),
 
-  layer('spacebar', 'Space').manipulators([
-    withMapper({
-      h:'←',
-      j:'↓',
-      k:'↑',
-      l:'→',
-    } as const)
-    ((key, value) => map(key).to(value)),
+  layer('spacebar', 'spacebar_layer')
+    .modifiers('??')
+    .manipulators([
 
-    map(';').to('return_or_enter'),
-    map('g').to('left_command'),
-  ]),
+      map('s').to('‹⇧'),
+      map('d').to('‹⌃'),
+      map('f').to('‹⌥'),
+      map('g').to('‹⌘'),
 
+      map('h').to('←'),
+      map('j').to('↓'),
+      map('k').to('↑'),
+      map('l').to('→'),
 
-  layer('non_us_backslash', 'symbols').manipulators([
-    withMapper(['⌘', '⌥', '⌃', '⇧', '⇪' ])
-    ((key, index) => map((index + 1) as NumberKeyValue).toPaste(key)),
+      map(';').to('return_or_enter'),
+      map('a').to('delete_or_backspace'),
+    ]),
 
-    withMapper(['←', '→', '↑', '↓', '␣', '⏎', '⌫', '⌦', '⇥', '⎋',])
-    ((key) => map(key).toPaste(key)),
+  layer('non_us_backslash', 'symbols_layer')
+    .manipulators([
+      withMapper(['⌘', '⌥', '⌃', '⇧', '⇪'])
+        ((key, index) => map((index + 1) as NumberKeyValue).toPaste(key)),
 
-    map(',').toPaste('‹'), // left_{modifier}
-    map('.').toPaste('›'), // ig ht_{modifier}
-  ]),
+      withMapper(['←', '→', '↑', '↓', '␣', '⏎', '⌫', '⌦', '⇥', '⎋',])
+        ((key) => map(key).toPaste(key)),
+
+      map(',').toPaste('‹'),
+      map('.').toPaste('›'),
+    ]),
 ])
