@@ -3,9 +3,9 @@ global_vars:
     type: echo
     params:
       echo: |
-        hello@svm.codes
         mail@svm.codes
         shad@svm.codes
+        hello@svm.codes
 
   - name: engineer
     type: echo
@@ -19,7 +19,7 @@ global_vars:
     type: echo
     params:
       echo: |
-        support@stonecode.pro
+        svm@stonecode.pro
         contact@stonecode.pro
         samuel.kaminski@stonecode.pro
 
@@ -31,10 +31,18 @@ global_vars:
         samuel.kaminski.webdev@gmail.com
         samuel.kaminski.nexus@gmail.com
 
+  - name: other
+    type: echo
+    params:
+      echo: |
+        samuel.kaminski@proton.me
+        samuel.kaminski@icloud.com
+
+
   - name: mail
     type: echo
     params:
-      echo: "{{codes}}{{engineer}}{{stonecode}}{{gmail}}"
+      echo: "{{codes}}{{engineer}}{{stonecode}}{{gmail}}{{other}}"
 
 matches:
   - trigger: "@mail"
@@ -43,7 +51,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{mail}}' | choose; or echo mail@svm.codes"
+          cmd: fish -c "echo -e '{{mail}}' | choose; or echo @mail"
           shell: zsh
 
   - trigger: "@codes"
@@ -52,7 +60,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{codes}}' | choose; or echo mail@svm.codes"
+          cmd: fish -c "echo -e '{{codes}}' | choose; or echo @svm.codes"
           shell: zsh
 
   - trigger: "@engineer"
@@ -61,7 +69,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{engineer}}' | choose; or echo mail@svm.codes"
+          cmd: fish -c "echo -e '{{engineer}}' | choose; or echo @svm.engineer"
           shell: zsh
 
   - trigger: "@stonecode"
@@ -70,7 +78,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{stonecode}}' | choose; or echo mail@svm.codes"
+          cmd: fish -c "echo -e '{{stonecode}}' | choose; or echo @stonecode"
           shell: zsh
 
   - trigger: "@gmail"
@@ -79,5 +87,5 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: fish -c "echo -e '{{gmail}}' | choose; or echo mail@svm.codes"
+          cmd: fish -c "echo -e '{{gmail}}' | choose; or echo @gmail.com"
           shell: zsh
