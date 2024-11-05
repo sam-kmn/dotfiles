@@ -1,52 +1,45 @@
 import
-  {
-    layer,
-    map,
-    NumberKeyValue,
-    rule,
-    withMapper,
-    writeToProfile,
-  } from 'karabiner.ts'
+{
+  layer,
+  map,
+  modifierLayer,
+  NumberKeyValue,
+  rule,
+  withMapper,
+  writeToProfile,
+} from 'karabiner.ts'
 
 
 writeToProfile('node', [
 
-  rule('disable defaults')
+  rule('defaults')
     .manipulators([
       map('h', '⌘').toNone(),
     ]),
 
-  rule('straight map')
+  rule('modifiers')
     .manipulators([
-      map('caps_lock')
+      map('›⇧')
         .toHyper()
         .toIfAlone('return_or_enter'),
+      map('⇪')
+        .to('delete_or_backspace')
     ]),
 
-  layer(';', 'semi_layer')
-    .manipulators([
-      map('w').to('fn', '⌃')
-    ]),
-
-  layer('spacebar', 'spacebar_layer')
+  layer('spacebar', 'navigation')
     .modifiers('??')
     .manipulators([
-
-      map('s').to('‹⇧'),
-      map('d').to('‹⌃'),
-      map('f').to('‹⌥'),
-      map('g').to('‹⌘'),
+      map('n').to('←', '⌥⇧'),
+      map('m').to('→', '⌥⇧'),
+      map('w').to('fn', '⌃'),
 
       map('h').to('←'),
       map('j').to('↓'),
       map('k').to('↑'),
       map('l').to('→'),
-
-      map(';').to('return_or_enter'),
-      map('a').to('delete_or_backspace'),
     ]),
 
-  layer('non_us_backslash', 'symbols_layer')
+  layer('non_us_backslash', 'symbols')
     .manipulators([
       withMapper(['⌘', '⌥', '⌃', '⇧', '⇪'])
         ((key, index) => map((index + 1) as NumberKeyValue).toPaste(key)),
@@ -58,3 +51,13 @@ writeToProfile('node', [
       map('.').toPaste('›'),
     ]),
 ])
+// modifierLayer('<⌥', 'v')
+//   .description('Visual')
+//   .notification('Visual')
+//   .leaderMode()
+//   .manipulators([
+//     map('h').to('←', '<⌥⇧'),
+//     map('j').to('↓', '<⌥⇧'),
+//     map('k').to('↑', '<⌥⇧'),
+//     map('l').to('→', '<⌥⇧'),
+//   ]),
