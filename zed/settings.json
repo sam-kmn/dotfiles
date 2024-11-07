@@ -1,0 +1,68 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "confirm_quit": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Zedokai (Filter Ristretto)"
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+    "selections_menu": false
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "indent_guides": {
+    "enabled": false,
+    "coloring": "indent_aware"
+  },
+
+  "tab_size": 2,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "preferred_line_length": 80,
+  "relative_line_numbers": true,
+
+  "buffer_font_family": "MonoLisa",
+  "ui_font_family": "MonoLisa",
+  "ui_font_fallbacks": ["Fira Code"],
+
+  "linter": "eslint",
+  "prettier": {
+    "allowed": true,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "languages": {
+    "Vue.js": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    }
+  }
+}
